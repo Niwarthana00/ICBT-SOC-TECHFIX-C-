@@ -2,6 +2,7 @@
 <%@ Register Src="~/NavBar.ascx" TagPrefix="uc" TagName="NavBar" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Shopping Cart</title>
@@ -96,12 +97,12 @@
             </h3>
             <div>
                 <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="btn btn-primary" OnClick="Checkout_Click" />
-                <asp:Button ID="btnDownloadQuotation" runat="server" Text="Download Quotation" CssClass="btn download-btn" OnClick="DownloadQuotation_Click" />
+                <asp:Button ID="btnDownloadQuotation" runat="server" Text="Download the Quotation" CssClass="btn download-btn" OnClick="DownloadQuotation_Click" />
             </div>
         </div>
     </div>
 </form>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
