@@ -61,7 +61,6 @@ namespace desktop_admin_panel
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(316, 682);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // pictureBox1
             // 
@@ -126,7 +125,7 @@ namespace desktop_admin_panel
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(357, 125);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
@@ -165,7 +164,6 @@ namespace desktop_admin_panel
             this.label7.Size = new System.Drawing.Size(44, 42);
             this.label7.TabIndex = 26;
             this.label7.Text = "X";
-            this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
             // button1
             // 
@@ -195,6 +193,7 @@ namespace desktop_admin_panel
             this.button2.TabIndex = 27;
             this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // view_product
             // 
