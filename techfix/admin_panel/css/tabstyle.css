@@ -1,0 +1,80 @@
+﻿/* Dark theme background and text styling */
+body.dark-theme {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Container styling for the tab content */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* Slightly lighter background for the container */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    text-align: center;
+}
+
+/* Styling for the TabContainer */
+.tab-container .ajax__tab_header {
+    border: none;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.tab-container .ajax__tab_tab {
+    background-color: #2a2a2a; /* Darker tab background */
+    color: #e0e0e0; /* Light gray text */
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #444444;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
+    display: inline-block;
+}
+
+/* Styling for the active tab */
+.tab-container .ajax__tab_active {
+    background-color: #4CAF50; /* Active tab color (green) */
+    color: #ffffff; /* White text for active tab */
+    border-bottom: none;
+    transform: scale(1.05);
+}
+
+/* Content inside each tab */
+.tab-container .ajax__tab_body {
+    background-color: #1c1c1c; /* Dark background for tab content */
+    color: #ffffff; /* White text inside the tabs */
+    padding: 30px;
+    border: 1px solid #444444;
+    border-radius: 8px;
+    margin-top: -1px;
+    text-align: left;
+}
+
+/* Hover effect for tabs */
+.tab-container .ajax__tab_tab:hover {
+    background-color: #3e3e3e; /* Slightly lighter hover background */
+    color: #ffffff; /* White text on hover */
+    transform: scale(1.1);
+}
+
+/* Button hover for active tab */
+.tab-container .ajax__tab_active:hover {
+    background-color: #66bb6a; /* Slightly lighter active tab on hover */
+}
+
+/* Responsive design for mobile view */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .tab-container .ajax__tab_tab {
+        padding: 10px 15px;
+    }
+}

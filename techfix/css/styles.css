@@ -1,0 +1,429 @@
+﻿
+.body{
+    background: black !important;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    position: absolute;
+    width: 100%;
+    z-index: 10; /* Ensure navbar stays above other content */
+}
+
+.navbar-brand .logo {
+    height: auto; /* Adjust logo size */
+    width: 110px;
+    margin-left: 20px;
+}
+
+/* Add more space between menu items */
+.navbar-nav .nav-item {
+    margin-left: 50px; /* Add space between menu items */
+}
+
+.nav-link {
+    color: white; /* White text for the navbar links */
+    color: rgb(255 255 255) !important;
+}
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: #FF3333 !important; /* Red hover and active color for navbar links */
+    }
+
+.bi-cart {
+    font-size: 1.5rem; /* Adjust cart icon size */
+    color: white; /* Set the cart icon color */
+}
+
+/* Customizing the Login button */
+.login-btn {
+    background-color: #FF3333; /* Red background */
+    color: white;
+    border: 2px solid white;
+    padding: 8px 20px;
+    text-transform: uppercase;
+}
+
+    .login-btn:hover {
+        background-color: black;
+        opacity: 0.5;
+        color: white;
+    }
+
+/* Carousel customization */
+.carousel-item {
+    height: 100vh; /* Fullscreen carousel */
+}
+
+    .carousel-item img {
+        height: 100%; /* Ensure image takes full height */
+        width: 100%; /* Ensure image takes full width */
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+    }
+
+.carousel-caption {
+    position: absolute;
+    top: 30%; /* Adjust this value to move the caption up or down */
+    color: #fff; /* White text for caption */
+    text-align: center; /* Center align the content */
+}
+
+    .carousel-caption h1 {
+        font-size: 7rem; /* Adjust heading size */
+    }
+
+    .carousel-caption p {
+        margin-top: 40px; /* Space between heading and paragraph */
+    }
+
+/* Custom styles for laptop image */
+.laptop-image {
+    max-width: 400px; /* Set desired max width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+/* Custom styles for buttons */
+.shop-btn {
+    background-color: #FF3333; /* Button background color */
+    border: 1px solid white;
+    padding: 10px 20px;
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    margin-top: 10px; /* Margin above the button */
+    margin-right: 300px;
+}
+
+    .shop-btn:hover {
+        background-color: black;
+        opacity: 0.5;
+        color: white;
+    }
+
+/* Input field outline */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    border: 2px solid #6A6A6A; /* Outline color */
+    border-radius: 0px; /* Rounded corners */
+    padding: 10px; /* Padding for input fields */
+    width: 400px; /* Full width for input fields */
+    background: #101010; /* Background color */
+    color: #6A6A6A; /* Text color for input fields */
+    margin-left: 30px
+}
+
+    /* Placeholder text color */
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="password"]::placeholder {
+        color: #6A6A6A; /* Placeholder text color */
+    }
+
+
+/* Carousel indicators */
+.carousel-indicators button {
+    background-color: #fff; /* White indicators */
+}
+
+/* Logo size adjustment */
+.img-logo {
+    width: 400px; /* Adjusted width */
+    height: 500px; /* Adjusted height */
+}
+
+/* CSS animations */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animations with delay */
+.animated-heading {
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.animated-logo {
+    animation: fadeInLogo 1s ease-in-out 1s forwards; /* 1s delay */
+}
+
+.animated-text {
+    animation: fadeInText 1s ease-in-out 2s forwards; /* 2s delay */
+}
+
+/* Particle container */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Fullscreen particles */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure particles stay behind content */
+}
+
+.particles-js-canvas-el {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Repeat Navbar customization */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    position: absolute;
+    width: 100%;
+    z-index: 10; /* Ensure navbar stays above other content */
+}
+
+/* Modal Background */
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Black background for the modal */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #FF3333; /* Red border */
+}
+
+/* Modal Header */
+.modal-header {
+    border-bottom: none !important; /* Remove bottom border */
+    color: white; /* Red text color for header */
+    background: #101010;
+}
+
+/* Modal Title */
+.modal-title {
+    font-weight: bold; /* Bold title */
+    font-size: 1.5rem; /* Adjust title size */
+    margin-left: 106px;
+}
+
+.close{
+    color:white !important;
+}
+/* Form Labels */
+.form-label {
+    margin-bottom: 1.5rem;
+    margin-left: 30px;
+    color: white;
+}
+
+/* Input Fields */
+.form-control {
+    border: 2px solid #6A6A6A; /* Gray border for input fields */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside input fields */
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: white;
+    margin-left: 20px;
+}
+
+.havent {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: white;
+    margin-left: 173px;
+}
+.already {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: white;
+    margin-left: 200px;
+}
+
+/* Button Styles */
+.btn-login-modal {
+    background-color: #FF3333 !important;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 403px !important;
+    margin-left: 30px !important;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    color: white;
+    font-weight: bold;
+}
+}
+
+
+/* Link Styles */
+.modal-body a {
+    color: #FF3333; /* Red color for the register link */
+    text-decoration: none; /* Remove underline */
+}
+    .modal-body a:hover {
+        text-decoration: underline; /* Underline on hover */
+    }
+
+/* Overall Modal Padding */
+.modal-body {
+    padding: 20px; /* Padding inside modal */
+    background: #101010;
+}
+
+
+/* Logo in Modal Header */
+.modal-logo {
+    max-width: 200px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between logo and title */
+    align-content:center;
+}
+
+
+/* About section */
+
+
+.about-us-heading {
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.hr-line{
+    margin-bottom: 40px;
+}
+.about-us-section {
+    color: white;
+    padding: 40px;
+}
+
+.about-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-us-title {
+    color: red;
+    font-weight: bold;
+}
+
+.about-us-text {
+    margin-bottom: 15px;
+    text-align:justify;
+}
+
+.service-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: #101010;
+}
+
+.icon-container {
+    text-align: center;
+    transition: border 0.3s ease;
+    padding: 10px;
+    border: 2px solid transparent;
+    width: 235px;
+    height: 155px;
+}
+
+    .icon-container:hover {
+        border: 2px solid red;
+    }
+
+.service-icon {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-container:hover .service-icon {
+    transform: scale(1.1);
+}
+
+.icon-text {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#repairs-upgrades {
+    padding: 20px;
+    text-align: center;
+    color:white;
+    border-radius: 10px;
+   
+}
+
+.service-item {
+    display: inline-block;
+    width: 30%;
+    margin: 20px;
+    text-align: center;
+    vertical-align: top;
+}
+.color {
+    color: white;
+    margin-bottom: 30px
+}
+
+
+
+.service-item img {
+    margin-bottom: 10px;
+}
+
+    .service-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .service-item p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+.service-item ul {
+    text-align: left;
+    list-style: disc;
+    margin: 0 auto;
+    padding-left: 20px;
+    margin-left: 50px;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    color: white;
+}

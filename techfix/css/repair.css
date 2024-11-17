@@ -1,0 +1,246 @@
+﻿.sidebar {
+    height: 100%;
+    position: fixed;
+    top: 60px; /* Adjust based on your navbar height */
+    left: 0;
+    width: 250px;
+    padding: 20px;
+    background-color: #343a40;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+    .category-item img {
+        width: 20px;
+        height: 20px;
+        margin-right: 9px;
+        margin-bottom: 11px;
+    }
+
+    .category-item p {
+        color: #ffffff;
+        margin: 0;
+    }
+.h5, h5 {
+    font-size: 1.25rem;
+    margin-top: 50px !important;
+    margin-bottom: 30px !important;
+}
+.img-side{
+    margin-bottom : 10px;
+
+}
+
+/* General sidebar styles */
+.sidebar {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.category-item {
+    background-color: #444;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+}
+
+    /* Category image styles */
+    .category-item img {
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+
+/* Default border for category */
+.category-item {
+    border: 2px solid transparent;
+}
+
+    /* Hover effect */
+    .category-item:hover {
+        border-color: #888;
+    }
+
+    /* Active category with red border */
+    .category-item.active {
+        border-color: red;
+    }
+
+    .category-item a {
+        color: white;
+        text-decoration: none;
+    }
+
+        .category-item a:hover {
+            text-decoration: underline;
+        }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Makes space between items */
+}
+
+
+
+/* Custom styling for the item card */
+.item {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* ensures no overlap issues */
+}
+
+    .item img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .item:hover {
+        transform: scale(1.05);
+    }
+
+    .item h4, .item p {
+        margin: 10px 0;
+        color: white;
+    }
+
+
+.qty{
+    margin-left: 5px !important;
+    margin-right: 5px;
+}
+.price {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    left: 10px; /* Fixed to the left side of the card */
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+    margin-left: -10px;
+}
+
+.add-to-cart {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.item:hover .add-to-cart {
+    opacity: 1; /* Show add to cart button on hover */
+}
+
+.item:hover .price {
+    opacity: 0; /* Hide price on hover */
+}
+
+@media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 33% !important;
+    }
+}
+.item {
+    /* Responsive grid layout for larger screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px; /* Adjust width as per design */
+    height: 100%;
+    padding: 20px;
+    background-color: #222; /* Adjust based on your theme */
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.container, .container-lg, .container-md, .container-sm {
+    width: 787px !important;
+    margin-left: 300px !important;
+}
+
+.item img {
+    width: 100%;
+    height: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+    .item:hover img {
+        transform: scale(1.2); /* Zoom effect on hover */
+    }
+
+    .item h4, .item p {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .item:hover h4, .item:hover p {
+        opacity: 0; /* Fade out text on hover */
+    }
+
+.add-to-cart {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 200px;
+}
+
+.item:hover .add-to-cart {
+    opacity: 1; /* Show Add to Cart button on hover */
+}
+
+.price {
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* Make the price section span the entire width */
+    background-color: red;
+    color: white;
+    padding: 10px 0; /* Adjust padding to control height */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0 0 10px 10px; /* Rounded corners for bottom */
+}
+
+.margin{
+    margin-bottom: 50px !important;
+}
+
+
+
