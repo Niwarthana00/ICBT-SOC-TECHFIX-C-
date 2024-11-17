@@ -74,7 +74,6 @@ namespace desktop_admin_panel
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            // Optionally handle text change if needed
         }
 
         private void label7_Click(object sender, EventArgs e)
