@@ -59,6 +59,7 @@
             this.button2.TabIndex = 48;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -73,6 +74,7 @@
             this.button1.TabIndex = 38;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -105,7 +107,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(73, 21);
+            this.label1.Location = new System.Drawing.Point(77, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(212, 38);
@@ -139,7 +141,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::desktop_admin_panel.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(41, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(39, 106);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(206, 120);
             this.pictureBox1.TabIndex = 8;
@@ -148,7 +150,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::desktop_admin_panel.Properties.Resources.download_removebg_preview__2_2;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox2.Location = new System.Drawing.Point(13, 37);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(53, 50);
             this.pictureBox2.TabIndex = 0;
@@ -162,6 +164,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(696, 108);
             this.richTextBox1.TabIndex = 46;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label6
             // 
@@ -186,6 +189,7 @@
             this.label7.Size = new System.Drawing.Size(44, 42);
             this.label7.TabIndex = 49;
             this.label7.Text = "X";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // addcategory
             // 
