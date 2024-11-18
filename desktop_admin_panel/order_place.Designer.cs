@@ -73,10 +73,10 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Location = new System.Drawing.Point(0, 683);
+            this.btnSettings.Location = new System.Drawing.Point(9, 683);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(318, 88);
+            this.btnSettings.Size = new System.Drawing.Size(304, 88);
             this.btnSettings.TabIndex = 10;
             this.btnSettings.Text = "Logout";
             this.btnSettings.UseVisualStyleBackColor = false;
@@ -125,7 +125,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(357, 188);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -159,7 +159,6 @@
             this.label7.Size = new System.Drawing.Size(44, 42);
             this.label7.TabIndex = 26;
             this.label7.Text = "X";
-            this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
             // order_place
             // 
@@ -175,6 +174,7 @@
             this.Name = "order_place";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "order_place";
+            this.Load += new System.EventHandler(this.order_place_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

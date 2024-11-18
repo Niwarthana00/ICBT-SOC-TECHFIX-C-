@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace desktop_admin_panel
@@ -12,89 +13,103 @@ namespace desktop_admin_panel
             InitializeComponent();
         }
 
-        private void appo_Load(object sender, EventArgs e)
+        private void order_place_Load(object sender, EventArgs e)
         {
-            LoadAppointments();
+            tableLayoutPanel1.BackColor = Color.White;
+            Loadorder();
+        }
+        private void order_place_Load_1(object sender, EventArgs e)
+        {
+            // Add logic for the form's Load event, if necessary.
         }
 
-        private void LoadAppointments()
+        private void Loadorder()
         {
             // Connection string for techfixdb database
             string connectionString = "Server=(LocalDb)\\MSSQLLocalDB; Database=techfixdb; Integrated Security=True;";
 
-            // SQL query to fetch appointment data
-            string query = "SELECT orderid, customer_name, phone_number, address, item_name, quantity, price, order_total, order_date  FROM customerorder";
-
-            // Create a DataTable to hold the data
-            DataTable appointmentTable = new DataTable();
-
-            // Connect to the database and retrieve data
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                try
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    adapter.Fill(appointmentTable);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading data: " + ex.Message);
-                    return;
+
+                    string query = "SELECT orderid, customer_name, phone_number, address, item_name, quantity, price, order_total, order_date FROM customerorder";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    // Clear previous controls and dynamically generate rows/columns
+                    tableLayoutPanel1.Controls.Clear();
+                    tableLayoutPanel1.RowStyles.Clear();
+                    tableLayoutPanel1.ColumnStyles.Clear();
+
+                    // Set the number of rows and columns
+                    tableLayoutPanel1.RowCount = dataTable.Rows.Count + 1; // Add 1 for header
+                    tableLayoutPanel1.ColumnCount = dataTable.Columns.Count;
+
+                    // Set headers
+                    for (int col = 0; col < dataTable.Columns.Count; col++)
+                    {
+                        Label header = new Label
+                        {
+                            Text = dataTable.Columns[col].ColumnName,
+                            Font = new Font("Arial", 10, FontStyle.Bold),
+                            TextAlign = ContentAlignment.MiddleCenter,
+                            BackColor = Color.LightGray,
+                            AutoSize = true,
+                            Dock = DockStyle.Fill
+                        };
+                        tableLayoutPanel1.Controls.Add(header, col, 0);
+                    }
+
+                    // Populate rows with data
+                    for (int row = 0; row < dataTable.Rows.Count; row++)
+                    {
+                        for (int col = 0; col < dataTable.Columns.Count; col++)
+                        {
+                            Label cell = new Label
+                            {
+                                Text = dataTable.Rows[row][col].ToString(),
+                                TextAlign = ContentAlignment.MiddleCenter,
+                                BackColor = Color.White,
+                                AutoSize = true,
+                                Dock = DockStyle.Fill
+                            };
+                            tableLayoutPanel1.Controls.Add(cell, col, row + 1);
+                        }
+                    }
+
+                    // Adjust row and column styles for proper layout
+                    for (int i = 0; i < tableLayoutPanel1.RowCount; i++)
+                    {
+                        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                    }
+
+                    for (int i = 0; i < tableLayoutPanel1.ColumnCount; i++)
+                    {
+                        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / tableLayoutPanel1.ColumnCount));
+                    }
                 }
             }
-
-            // Create and configure the DataGridView if not added in designer
-            DataGridView dataGridView = new DataGridView
+            catch (Exception ex)
             {
-                DataSource = appointmentTable,
-                Dock = DockStyle.Fill,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                ReadOnly = true,
-                AllowUserToAddRows = false,
-                BackgroundColor = System.Drawing.Color.Black,
-                ForeColor = System.Drawing.SystemColors.ButtonHighlight,
-                ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle
-                {
-                    BackColor = System.Drawing.Color.Gray,
-                    ForeColor = System.Drawing.Color.White,
-                    Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Bold)
-                },
-                DefaultCellStyle = new DataGridViewCellStyle
-                {
-                    BackColor = System.Drawing.Color.Black,
-                    ForeColor = System.Drawing.Color.White
-                }
-            };
-
-            // Clear previous controls in TableLayoutPanel to avoid duplication
-            tableLayoutPanel1.Controls.Clear();
-
-            // Add the DataGridView to the TableLayoutPanel and span across all columns
-            tableLayoutPanel1.Controls.Add(dataGridView, 0, 0);
-            tableLayoutPanel1.SetColumnSpan(dataGridView, tableLayoutPanel1.ColumnCount);  // Span across all columns
-
-            // Adjust TableLayoutPanel's row styles to fit DataGridView properly
-            tableLayoutPanel1.RowStyles.Clear();
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+                MessageBox.Show("Error loading data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
         private void label7_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            dashboard ds = new dashboard();
+            ds.Show();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -103,12 +118,13 @@ namespace desktop_admin_panel
             ds.Show();
             this.Hide();
         }
+        
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            dashboard ds = new dashboard();
-            ds.Show();
-            this.Hide();
+            // No custom paint logic required.
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -122,11 +138,6 @@ namespace desktop_admin_panel
                 loginform.Show();
                 this.Hide();
             }
-        }
-
-        private void label7_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
