@@ -124,7 +124,9 @@ namespace desktop_admin_panel
             }
 
             edit_category product = new edit_category(clickedCategoryId);
-            product.ShowDialog();
+            product.Show();
+            this.Hide();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -177,6 +179,46 @@ namespace desktop_admin_panel
                         MessageBox.Show("Error deleting category: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            category_page ds = new category_page();
+            ds.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            category_page ds = new category_page();
+            ds.Show();
+            this.Hide();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginform = new login();
+                loginform.Show();
+                this.Hide();
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginform = new login();
+                loginform.Show();
+                this.Hide();
             }
         }
     }

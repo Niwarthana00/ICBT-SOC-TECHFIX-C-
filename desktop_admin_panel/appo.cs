@@ -95,5 +95,45 @@ namespace desktop_admin_panel
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            customer_page customer = new customer_page();
+            customer.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            customer_page customer = new customer_page();
+            customer.Show();
+            this.Hide();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginform = new login();
+                loginform.Show();
+                this.Hide();
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginform = new login();
+                loginform.Show();
+                this.Hide();
+            }
+        }
     }
 }

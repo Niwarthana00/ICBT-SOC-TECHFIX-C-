@@ -70,6 +70,7 @@ namespace desktop_admin_panel
             this.pictureBox1.Size = new System.Drawing.Size(206, 120);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox3
             // 
@@ -80,6 +81,7 @@ namespace desktop_admin_panel
             this.pictureBox3.Size = new System.Drawing.Size(88, 77);
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // btnSettings
             // 
@@ -94,6 +96,7 @@ namespace desktop_admin_panel
             this.btnSettings.TabIndex = 10;
             this.btnSettings.Text = "Logout";
             this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // pictureBox2
             // 
@@ -115,6 +118,7 @@ namespace desktop_admin_panel
             this.label1.Size = new System.Drawing.Size(212, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Admin Panel";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -125,7 +129,7 @@ namespace desktop_admin_panel
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(357, 125);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);

@@ -64,6 +64,12 @@
     <Compile Include="appo.Designer.cs">
       <DependentUpon>appo.cs</DependentUpon>
     </Compile>
+    <Compile Include="category_page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="category_page.Designer.cs">
+      <DependentUpon>category_page.cs</DependentUpon>
+    </Compile>
     <Compile Include="customer_details.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="appo.resx">
       <DependentUpon>appo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="category_page.resx">
+      <DependentUpon>category_page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customer_details.resx">
       <DependentUpon>customer_details.cs</DependentUpon>

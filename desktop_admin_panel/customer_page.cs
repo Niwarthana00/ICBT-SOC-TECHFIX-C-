@@ -29,20 +29,19 @@ namespace desktop_admin_panel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Create an instance of the CustomerDetails form
-            view_product product = new view_product();
+            customer_details customerForm = new customer_details();
+            customerForm.Show();
 
-            // Show the CustomerDetails form as a modal dialog
-            product.ShowDialog();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Create an instance of the CustomerDetails form
-            appo customerForm = new appo();
+            appo appoingment = new appo();
+            appoingment.Show();
 
-            // Show the CustomerDetails form as a modal dialog
-            customerForm.ShowDialog();
+            // Then close current form
+            this.Hide();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -58,6 +57,46 @@ namespace desktop_admin_panel
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            dashboard ds = new dashboard();
+            ds.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            dashboard ds = new dashboard();
+            ds.Show();
+            this.Hide();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginform = new login();
+                loginform.Show();
+                this.Hide();
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginform = new login();
+                loginform.Show();
+                this.Hide();
+            }
         }
     }
 }

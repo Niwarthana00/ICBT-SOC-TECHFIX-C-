@@ -21,3 +21,4 @@ C:\Users\MSI\Desktop\ass\techfix\desktop_admin_panel\obj\Debug\desktop_admin_pan
 C:\Users\MSI\Desktop\ass\techfix\desktop_admin_panel\obj\Debug\desktop_admin_panel.edit_product.resources
 C:\Users\MSI\Desktop\ass\techfix\desktop_admin_panel\obj\Debug\desktop_admin_panel.edit_category.resources
 C:\Users\MSI\Desktop\ass\techfix\desktop_admin_panel\obj\Debug\desktop_admin_panel.order_place.resources
+C:\Users\MSI\Desktop\ass\techfix\desktop_admin_panel\obj\Debug\desktop_admin_panel.category_page.resources

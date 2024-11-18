@@ -37,9 +37,10 @@ namespace desktop_admin_panel
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +120,17 @@ namespace desktop_admin_panel
             this.panel1.Size = new System.Drawing.Size(556, 523);
             this.panel1.TabIndex = 7;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::desktop_admin_panel.Properties.Resources.n_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 96);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(553, 375);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -144,16 +156,19 @@ namespace desktop_admin_panel
             this.label5.TabIndex = 9;
             this.label5.Text = " Enter password :";
             // 
-            // pictureBox1
+            // label7
             // 
-            this.pictureBox1.BackgroundImage = global::desktop_admin_panel.Properties.Resources.n_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 96);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(553, 375);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(1004, -4);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 42);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "X";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // login
             // 
@@ -161,6 +176,7 @@ namespace desktop_admin_panel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1047, 519);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -193,5 +209,6 @@ namespace desktop_admin_panel
         private Panel panel1;
         private Label label4;
         private Label label5;
+        private Label label7;
     }
 }

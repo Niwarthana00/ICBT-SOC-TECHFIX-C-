@@ -32,19 +32,19 @@ namespace desktop_admin_panel
 
         private void label1_Click_1(object sender, EventArgs e)
         {
-            // Another label click handler, if needed.
+            dashboard ds = new dashboard();
+            ds.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Create an instance of the Customer form
+            // Create customer page form first
             customer_page customerForm = new customer_page();
+            customerForm.Show();
 
-            // Show the Customer form as a modal dialog
-            customerForm.ShowDialog();
-
-            // Close the current form (this form) after the modal dialog is closed
-            this.Close();
+            // Then close current form
+            this.Hide();
         }
 
 
@@ -57,40 +57,60 @@ namespace desktop_admin_panel
         private void button2_Click(object sender, EventArgs e)
         {
 
-            order_place customerForm = new order_place();
+            order_place order = new order_place();
+            order.Show();
 
-            // Show the Customer form as a modal dialog
-            customerForm.ShowDialog();
-
-            // Close the current form (this form) after the modal dialog is closed
-            this.Close();
+            this.Hide();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginform = new login();
+                loginform.Show();
+                this.Hide();
+            }
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            view_category customerForm = new view_category();
+            category_page category = new category_page();
+            category.Show();
 
-            // Show the Customer form as a modal dialog
-            customerForm.ShowDialog();
-
-            // Close the current form (this form) after the modal dialog is closed
-            this.Close();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            product_page productpage = new product_page();
+            product_page product = new product_page();
+            product.Show();
 
-            // Show the Customer form as a modal dialog
-            productpage.ShowDialog();
+            this.Hide();
+        }
 
-            // Close the current form (this form) after the modal dialog is closed
-            this.Close();
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            dashboard ds = new dashboard();
+            ds.Show();
+            this.Hide();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginform = new login();
+                loginform.Show();
+                this.Hide();
+            }
         }
     }
 }

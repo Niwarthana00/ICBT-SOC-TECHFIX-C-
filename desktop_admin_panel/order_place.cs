@@ -96,5 +96,37 @@ namespace desktop_admin_panel
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            dashboard ds = new dashboard();
+            ds.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            dashboard ds = new dashboard();
+            ds.Show();
+            this.Hide();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginform = new login();
+                loginform.Show();
+                this.Hide();
+            }
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

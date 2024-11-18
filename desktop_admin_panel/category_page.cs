@@ -10,17 +10,25 @@ using System.Windows.Forms;
 
 namespace desktop_admin_panel
 {
-    public partial class product_page : Form
+    public partial class category_page : Form
     {
-        public product_page()
+        public category_page()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            view_product viewproduct = new view_product();
-            viewproduct.Show();
+            view_category viewcategory = new view_category();
+            viewcategory.Show();
+
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            addcategory addcategory = new addcategory();
+            addcategory.Show();
 
             this.Hide();
         }
@@ -37,19 +45,6 @@ namespace desktop_admin_panel
             dashboard ds = new dashboard();
             ds.Show();
             this.Hide();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            addproduct add = new addproduct();
-            add.Show();
-
-            this.Hide();
-        }
-
-        private void product_page_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

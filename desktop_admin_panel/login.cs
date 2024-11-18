@@ -89,7 +89,7 @@ namespace desktop_admin_panel
 
         private void login_Load(object sender, EventArgs e)
         {
-            // Optional: Add any load logic here
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -110,6 +110,11 @@ namespace desktop_admin_panel
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
