@@ -88,6 +88,16 @@ namespace desktop_admin_panel
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Category updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Close the current form
+                            this.Hide();
+
+                            // Open the view_category form
+                            view_category viewCategoryForm = new view_category();
+                            viewCategoryForm.ShowDialog();
+
+                            // Close this form completely
+                            this.Close();
                         }
                         else
                         {
@@ -116,6 +126,12 @@ namespace desktop_admin_panel
         private void edit_category_Load_1(object sender, EventArgs e)
         {
             // You can add any additional logic here when the form loads again.
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

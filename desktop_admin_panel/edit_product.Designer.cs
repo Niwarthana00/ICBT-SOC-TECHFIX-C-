@@ -256,6 +256,7 @@
             this.label10.Size = new System.Drawing.Size(44, 42);
             this.label10.TabIndex = 51;
             this.label10.Text = "X";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // category
             // 

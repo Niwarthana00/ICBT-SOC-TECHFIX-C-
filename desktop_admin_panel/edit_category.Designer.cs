@@ -191,6 +191,7 @@
             this.label7.Size = new System.Drawing.Size(44, 42);
             this.label7.TabIndex = 64;
             this.label7.Text = "X";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // edit_category
             // 

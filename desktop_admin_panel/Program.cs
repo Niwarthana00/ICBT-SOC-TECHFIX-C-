@@ -16,7 +16,7 @@ namespace desktop_admin_panel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new view_product());
+            Application.Run(new view_category());
         }
     }
 }

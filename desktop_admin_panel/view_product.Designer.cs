@@ -125,7 +125,7 @@ namespace desktop_admin_panel
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(357, 125);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
@@ -164,6 +164,7 @@ namespace desktop_admin_panel
             this.label7.Size = new System.Drawing.Size(44, 42);
             this.label7.TabIndex = 26;
             this.label7.Text = "X";
+            this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
             // button1
             // 
