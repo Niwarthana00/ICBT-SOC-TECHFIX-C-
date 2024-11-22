@@ -370,12 +370,15 @@
     <Content Include="admin_panel\img\msimb1.png" />
     <Content Include="admin_panel\img\pro1.png" />
     <Content Include="admin_panel\img\pro2.png" />
+    <Content Include="admin_panel\js\main.js" />
+    <Content Include="admin_panel\login.aspx" />
     <Content Include="admin_panel\quote.aspx" />
     <Content Include="admin_panel\s1analyze.aspx" />
     <Content Include="admin_panel\s1place_order.aspx" />
     <Content Include="admin_panel\s2analyze.aspx" />
     <Content Include="admin_panel\s2place_order.aspx" />
     <Content Include="admin_panel\s2quote.aspx" />
+    <Content Include="admin_panel\singup.aspx" />
     <Content Include="admin_panel\supplier1_order.aspx" />
     <Content Include="admin_panel\supplier2_order.aspx" />
     <Content Include="appointment.aspx" />
@@ -566,6 +569,13 @@
     <Compile Include="admin_panel\EditProduct.aspx.designer.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin_panel\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_panel\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin_panel\quote.aspx.cs">
       <DependentUpon>quote.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -607,6 +617,13 @@
     </Compile>
     <Compile Include="admin_panel\s2quote.aspx.designer.cs">
       <DependentUpon>s2quote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_panel\singup.aspx.cs">
+      <DependentUpon>singup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_panel\singup.aspx.designer.cs">
+      <DependentUpon>singup.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin_panel\supplier1_order.aspx.cs">
       <DependentUpon>supplier1_order.aspx</DependentUpon>
@@ -854,9 +871,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="admin_panel\js\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

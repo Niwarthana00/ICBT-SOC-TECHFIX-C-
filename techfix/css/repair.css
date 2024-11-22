@@ -1,12 +1,18 @@
 ﻿.sidebar {
     height: 100%;
     position: fixed;
-    top: 60px; /* Adjust based on your navbar height */
     left: 0;
-    width: 250px;
+    width: 300px;
     padding: 20px;
     background-color: #343a40;
 }
+.fixed-remove{
+    position: relative !important;
+}
+.item-wrapper {
+    margin-top: 7rem;
+}
+
 
 .category-item {
     display: flex;
@@ -18,7 +24,7 @@
         width: 20px;
         height: 20px;
         margin-right: 9px;
-        margin-bottom: 11px;
+        
     }
 
     .category-item p {
@@ -27,7 +33,7 @@
     }
 .h5, h5 {
     font-size: 1.25rem;
-    margin-top: 50px !important;
+    margin-top: 10px !important;
     margin-bottom: 30px !important;
 }
 .img-side{
@@ -45,7 +51,7 @@
 .category-item {
     background-color: #444;
     border-radius: 8px;
-    padding: 10px;
+    padding: 15px 10px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -160,12 +166,12 @@
     opacity: 0; /* Hide price on hover */
 }
 
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
     .col-lg-3 {
         flex: 0 0 auto;
         width: 33% !important;
     }
-}
+}*/
 .item {
     /* Responsive grid layout for larger screens */
     display: flex;
@@ -181,11 +187,11 @@
     transition: transform 0.3s;
 }
 
-.container, .container-lg, .container-md, .container-sm {
+/*.container, .container-lg, .container-md, .container-sm {
     width: 787px !important;
     margin-left: 300px !important;
 }
-
+*/
 .item img {
     width: 100%;
     height: 150px;
