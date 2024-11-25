@@ -33,7 +33,7 @@ namespace techfix.supplier1
                     dt.Columns.Add("FullImagePath", typeof(string));
                     foreach (DataRow row in dt.Rows)
                     {
-                        row["FullImagePath"] = "../admin_panel/img/" + row["image"];
+                        row["FullImagePath"] = row["image"];
                     }
 
                     ProductGridView.DataSource = dt;

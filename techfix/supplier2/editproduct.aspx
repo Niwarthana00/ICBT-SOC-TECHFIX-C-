@@ -33,11 +33,14 @@
                                 <asp:Label ID="lblAvailability" runat="server" Text="Availability:"></asp:Label>
                                 <asp:TextBox ID="txtAvailability" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
-                            <div>
-                                <asp:Label ID="lblImage" runat="server" Text="Image:"></asp:Label>
-                                <asp:FileUpload ID="fileUploadImage" runat="server" />
-                                <asp:Image ID="imgPreview" runat="server" Width="100px" Height="100px" Visible="False" />
-                            </div>
+                                <div>
+          <asp:Label ID="image" runat="server" Text="Image URL:"></asp:Label>
+          <asp:TextBox ID="imgurl" runat="server" CssClass="form-control"></asp:TextBox>
+      </div>
+      <div>
+          <asp:Image ID="imgPreview" runat="server" CssClass="img-thumbnail" Visible="False" Width="150px" Height="150px" />
+      </div>
+                            <br />
                             <div>
                                 <asp:Button ID="btnSave" runat="server" Text="Update Product" OnClick="btnSave_Click" CssClass="btn btn-primary" />
                                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="btn btn-secondary" />

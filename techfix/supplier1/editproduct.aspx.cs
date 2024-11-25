@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Web.Configuration;
-using System.IO;
 
 namespace techfix.supplier1
 {
@@ -39,6 +38,9 @@ namespace techfix.supplier1
                     txtAvailability.Text = reader["qty"].ToString();
 
                     string imagePath = reader["image"].ToString();
+                    imgurl.Text = imagePath; // Set the image URL in the text box
+
+                    // Display a preview of the image if the path is valid
                     if (!string.IsNullOrEmpty(imagePath))
                     {
                         imgPreview.ImageUrl = imagePath;
@@ -47,6 +49,7 @@ namespace techfix.supplier1
                 }
             }
         }
+
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
@@ -60,17 +63,7 @@ namespace techfix.supplier1
                 command.Parameters.AddWithValue("@price", Convert.ToDecimal(txtPrice.Text));
                 command.Parameters.AddWithValue("@description", txtDescription.Text);
                 command.Parameters.AddWithValue("@qty", Convert.ToInt32(txtAvailability.Text));
-
-                // Handle image upload if a new file is selected
-                string imagePath = imgPreview.ImageUrl;  // Default to current image
-                if (fileUploadImage.HasFile)
-                {
-                    string fileName = Path.GetFileName(fileUploadImage.FileName);
-                    imagePath = "~/admin_panel/img/" + fileName;
-                    fileUploadImage.SaveAs(Server.MapPath(imagePath));
-                }
-                command.Parameters.AddWithValue("@image", imagePath);
-
+                command.Parameters.AddWithValue("@image", imgurl.Text);
                 command.Parameters.AddWithValue("@id", Convert.ToInt32(Request.QueryString["id"]));
 
                 connection.Open();

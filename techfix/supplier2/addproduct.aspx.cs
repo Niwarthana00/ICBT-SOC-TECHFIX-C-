@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
-using System.IO;
 
 namespace techfix.supplier2
 {
@@ -42,14 +40,7 @@ namespace techfix.supplier2
             string description = txtDescription.Text.Trim();
             string categoryId = ddlCategory.SelectedValue;
             string quantity = txtQuantity.Text.Trim();
-            string imagePath = "";
-
-            if (fileImage.HasFile)
-            {
-                string fileName = Path.GetFileName(fileImage.PostedFile.FileName);
-                imagePath = "~/admin_panel/img/" + fileName;
-                fileImage.SaveAs(Server.MapPath(imagePath));
-            }
+            string imageUrl = txtImageUrl.Text.Trim();
 
             string connectionString = WebConfigurationManager.ConnectionStrings["techfixdbConnectionString"].ConnectionString;
             string query = "INSERT INTO s2product (product_name, image, price, description, category_id, qty) VALUES (@productName, @image, @price, @description, @categoryId, @quantity)";
@@ -58,7 +49,7 @@ namespace techfix.supplier2
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@productName", productName);
-                command.Parameters.AddWithValue("@image", imagePath);
+                command.Parameters.AddWithValue("@image", imageUrl);
                 command.Parameters.AddWithValue("@price", price);
                 command.Parameters.AddWithValue("@description", description);
                 command.Parameters.AddWithValue("@categoryId", categoryId);
@@ -74,6 +65,7 @@ namespace techfix.supplier2
 
                     // Clear the form fields
                     txtProductName.Text = "";
+                    txtImageUrl.Text = "";
                     txtPrice.Text = "";
                     txtDescription.Text = "";
                     ddlCategory.SelectedIndex = 0;

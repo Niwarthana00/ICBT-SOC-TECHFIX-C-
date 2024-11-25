@@ -7,7 +7,7 @@
     <title>Add Product</title>
 </head>
 <body>
- <form id="form1" runat="server" enctype="multipart/form-data">
+ <form id="form1" runat="server">
     <uc1:Sidebar ID="Sidebar" runat="server" />
           <div class="container-fluid position-relative d-flex p-0">
               <div class="container mt-5">
@@ -23,8 +23,8 @@
                                 </div>
 
                                 <div style="margin-top: 10px;">
-                                    <asp:Label ID="lblImage" runat="server" Text="Image:"></asp:Label>
-                                    <asp:FileUpload ID="fileImage" runat="server" CssClass="form-control" />
+                                    <asp:Label ID="lblImage" runat="server" Text="Image URL:"></asp:Label>
+                                    <asp:TextBox ID="txtImageUrl" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
 
                                 <div style="margin-top: 10px;">

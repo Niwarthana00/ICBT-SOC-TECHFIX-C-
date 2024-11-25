@@ -69,13 +69,13 @@ namespace techfix.supplier1
         protected global::System.Web.UI.WebControls.Label lblImage;
 
         /// <summary>
-        /// fileImage control.
+        /// txtImageUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileImage;
+        protected global::System.Web.UI.WebControls.TextBox txtImageUrl;
 
         /// <summary>
         /// lblPrice control.

@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
-using System.IO;
 
 namespace techfix.supplier1
 {
@@ -42,13 +41,14 @@ namespace techfix.supplier1
             string description = txtDescription.Text.Trim();
             string categoryId = ddlCategory.SelectedValue;
             string quantity = txtQuantity.Text.Trim();
-            string imagePath = "";
+            string imageUrl = txtImageUrl.Text.Trim(); // Get the URL from the text box
 
-            if (fileImage.HasFile)
+            if (string.IsNullOrEmpty(imageUrl))
             {
-                string fileName = Path.GetFileName(fileImage.PostedFile.FileName);
-                imagePath = "~/admin_panel/img/" + fileName;
-                fileImage.SaveAs(Server.MapPath(imagePath));
+                lblMessage.Text = "Please provide a valid image URL.";
+                lblMessage.ForeColor = System.Drawing.Color.Red;
+                lblMessage.Visible = true;
+                return;
             }
 
             string connectionString = WebConfigurationManager.ConnectionStrings["techfixdbConnectionString"].ConnectionString;
@@ -58,7 +58,7 @@ namespace techfix.supplier1
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@productName", productName);
-                command.Parameters.AddWithValue("@image", imagePath);
+                command.Parameters.AddWithValue("@image", imageUrl);
                 command.Parameters.AddWithValue("@price", price);
                 command.Parameters.AddWithValue("@description", description);
                 command.Parameters.AddWithValue("@categoryId", categoryId);
@@ -70,6 +70,7 @@ namespace techfix.supplier1
                     command.ExecuteNonQuery();
 
                     lblMessage.Text = "Product saved successfully!";
+                    lblMessage.ForeColor = System.Drawing.Color.Green;
                     lblMessage.Visible = true;
 
                     // Clear the form fields
@@ -78,6 +79,7 @@ namespace techfix.supplier1
                     txtDescription.Text = "";
                     ddlCategory.SelectedIndex = 0;
                     txtQuantity.Text = "";
+                    txtImageUrl.Text = "";
                 }
                 catch (Exception ex)
                 {

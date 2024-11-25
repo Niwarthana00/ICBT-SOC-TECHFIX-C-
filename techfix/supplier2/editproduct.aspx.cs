@@ -43,6 +43,7 @@ namespace techfix.supplier2
                     {
                         imgPreview.ImageUrl = imagePath;
                         imgPreview.Visible = true;
+                        imgurl.Text = imagePath;
                     }
                 }
             }
@@ -60,16 +61,7 @@ namespace techfix.supplier2
                 command.Parameters.AddWithValue("@price", Convert.ToDecimal(txtPrice.Text));
                 command.Parameters.AddWithValue("@description", txtDescription.Text);
                 command.Parameters.AddWithValue("@qty", Convert.ToInt32(txtAvailability.Text));
-
-                // Handle image upload if a new file is selected
-                string imagePath = imgPreview.ImageUrl;  // Default to current image
-                if (fileUploadImage.HasFile)
-                {
-                    string fileName = Path.GetFileName(fileUploadImage.FileName);
-                    imagePath = "~/admin_panel/img/" + fileName;
-                    fileUploadImage.SaveAs(Server.MapPath(imagePath));
-                }
-                command.Parameters.AddWithValue("@image", imagePath);
+                command.Parameters.AddWithValue("@image", imgurl.Text);
 
                 command.Parameters.AddWithValue("@id", Convert.ToInt32(Request.QueryString["id"]));
 

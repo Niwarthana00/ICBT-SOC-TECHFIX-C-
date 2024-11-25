@@ -114,22 +114,22 @@ namespace techfix.supplier1
         protected global::System.Web.UI.WebControls.TextBox txtAvailability;
 
         /// <summary>
-        /// lblImage control.
+        /// image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblImage;
+        protected global::System.Web.UI.WebControls.Label image;
 
         /// <summary>
-        /// fileUploadImage control.
+        /// imgurl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileUploadImage;
+        protected global::System.Web.UI.WebControls.TextBox imgurl;
 
         /// <summary>
         /// imgPreview control.
