@@ -6,20 +6,21 @@ namespace desktop_admin_panel
 {
     public partial class login : Form
     {
-        // Database connection string
-        string connectionString = "your_connection_string_here"; // Replace with your actual connection string
+        // Replace with your actual connection string
+         string connectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=techfixdb;Integrated Security=True";
 
         public login()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonLogin_Click(object sender, EventArgs e)
         {
-            string email = textBox1.Text;
-            string password = textBox2.Text;
+            string email = textBox1.Text.Trim();
+            string password = textBox2.Text.Trim();
 
-            string query = "SELECT COUNT(1) FROM Users WHERE Email = @Email AND Password = @Password AND usertype = 'admin'";
+            // Query to check user credentials
+            string query = "SELECT COUNT(1) FROM UserRole WHERE Email = @Email AND Password = @Password AND Role = 'Admin'";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -27,94 +28,80 @@ namespace desktop_admin_panel
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", password);  
-                    int userCount = (int)cmd.ExecuteScalar();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@Password", password);
 
-                    if (userCount == 1)
-                    {
-                        MessageBox.Show("Login Successful!");
-                        dashboard dashboardForm = new dashboard();  // Create an instance of the dashboard form
-                        dashboardForm.Show();  // Show the dashboard form
-                        this.Hide();  // Hide the login form (optional)
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid email or password, or you are not an admin.");
+                        int userCount = (int)cmd.ExecuteScalar();
+
+                        if (userCount == 1)
+                        {
+                            MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dashboard dashboardForm = new dashboard();
+                            dashboardForm.Show(); // Show the dashboard form
+                            this.Hide(); // Hide the login form
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid email or password, or you are not authorized to access this system.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
+        private void textBoxEmail_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Enter your text here...")
+            if (textBox1.Text == "Enter your email...")
             {
                 textBox1.Text = "";
                 textBox1.ForeColor = System.Drawing.Color.Black;
             }
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void textBoxEmail_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                textBox1.Text = "Enter your text here...";
+                textBox1.Text = "Enter your email...";
                 textBox1.ForeColor = System.Drawing.Color.Gray;
             }
         }
 
-        private void textBox2_Enter(object sender, EventArgs e)
+        private void textBoxPassword_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == "Enter your text here...")
+            if (textBox2.Text == "Enter your password...")
             {
                 textBox2.Text = "";
                 textBox2.ForeColor = System.Drawing.Color.Black;
+                textBox2.UseSystemPasswordChar = true;
             }
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void textBoxPassword_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                textBox2.Text = "Enter your text here...";
+                textBox2.Text = "Enter your password...";
                 textBox2.ForeColor = System.Drawing.Color.Gray;
+                textBox2.UseSystemPasswordChar = false;
             }
         }
 
         private void login_Load(object sender, EventArgs e)
         {
+            // Set placeholders on load
+            textBox1.Text = "Enter your email...";
+            textBox1.ForeColor = System.Drawing.Color.Gray;
 
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            textBox2.Text = "Enter your password...";
+            textBox2.ForeColor = System.Drawing.Color.Gray;
+            textBox2.UseSystemPasswordChar = false;
         }
     }
 }

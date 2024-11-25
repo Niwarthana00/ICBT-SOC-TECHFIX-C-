@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace desktop_admin_panel
@@ -16,7 +13,9 @@ namespace desktop_admin_panel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new order_place());
+
+            // Start with the loading form
+            Application.Run(new loading());
         }
     }
 }

@@ -61,5 +61,10 @@ namespace desktop_admin_panel
         {
 
         }
+
+        private void logoPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
