@@ -66,7 +66,7 @@
             <ItemTemplate>
                 <div class="row cart-item align-items-center">
                     <div class="col-3 col-md-2">
-                        <img src='' alt='<%# Eval("ItemName") %>' class="img-fluid rounded" />
+                        <img src='<%# Eval("Image") %>' alt='<%# Eval("ItemName") %>' class="img-fluid rounded" />
                     </div>
                     <div class="col-4 col-md-3">
                         <h5 class="mb-0"><%# Eval("ItemName") %></h5>

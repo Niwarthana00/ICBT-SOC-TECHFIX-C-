@@ -107,7 +107,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: transparent; position: absolute; top: 10px; right: 10px; filter: invert(1);">
             </button>
                 <div class="custom-item-image">
-                    <img id="itemImage" src="" alt="Item Image" style= "margin-top: 78px;">
+                    <img id="itemImage" src='<%#  Eval("image_name") %>' alt="Item Image" style= "margin-top: 78px;">
                 </div>
                 <div class="custom-item-details">
                     <h4 id="itemName" class="item-head">Item Name</h4>
@@ -167,7 +167,7 @@
             document.getElementById("itemName").textContent = name;
             document.getElementById("itemDescription").textContent = description;
             document.getElementById("itemPrice").textContent = price;
-            document.getElementById("itemImage").src = "img/" + imageName;
+            document.getElementById("itemImage").src = imageName;
             document.getElementById("qtyInput").value = 1;
             document.getElementById("errorMsg").textContent = '';
         }

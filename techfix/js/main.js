@@ -31,7 +31,7 @@
         document.getElementById("modalItemName").innerText = itemName;
     document.getElementById("modalItemDescription").innerText = itemDescription;
     document.getElementById("modalItemPrice").innerText = itemPrice;
-    document.getElementById("modalItemImage").src = "img/" + itemImage;
+    document.getElementById("modalItemImage").src =  itemImage;
 
     // Reset quantity to 1
     document.getElementById("itemQty").value = 1;

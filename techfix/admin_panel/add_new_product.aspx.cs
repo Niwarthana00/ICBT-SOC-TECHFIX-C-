@@ -47,15 +47,9 @@ namespace techfix.admin_panel
             int categoryId = int.Parse(ddlCategory.SelectedValue);
             string description = txtDescription.Text;
             decimal price = decimal.Parse(txtPrice.Text);
-            string imageName = "";
+            string imageName = txtImageURL.Text;
 
-            if (fileUploadImage.HasFile)
-            {
-                // Save the uploaded image
-                imageName = fileUploadImage.FileName;
-                string filePath = Server.MapPath("../img/") + imageName;
-                fileUploadImage.SaveAs(filePath);
-            }
+         
 
             // Insert the new product into the database
             string connectionString = WebConfigurationManager.ConnectionStrings["techfixdbConnectionString"].ConnectionString;

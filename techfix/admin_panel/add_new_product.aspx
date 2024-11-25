@@ -31,9 +31,9 @@
                         <asp:TextBox ID="txtPrice" runat="server" CssClass="form-control" ></asp:TextBox>
                         <br />
 
-                        <label for="fileUploadImage">Image:</label>
-                        <asp:FileUpload ID="fileUploadImage" runat="server" CssClass="form-control" />
-                        <br />
+                        <label for="txtImageURL">Image URL:</label>
+ <asp:TextBox ID="txtImageURL" runat="server" CssClass="form-control" ></asp:TextBox>
+ <br />
 
             <asp:Button ID="btnAddProduct" runat="server" Text="Add Product" OnClick="btnAddProduct_Click" CssClass="btn btn-primary" />
             <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Green"></asp:Label>

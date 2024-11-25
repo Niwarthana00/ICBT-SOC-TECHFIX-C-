@@ -56,7 +56,7 @@ namespace techfix.admin_panel
                             priceLabel.Text = reader["price"].ToString();
 
                             string imagePath = reader["image"].ToString();
-                            productImage.ImageUrl = ResolveUrl("img/" + imagePath);
+                            productImage.ImageUrl = ResolveUrl( imagePath);
                         }
                         else
                         {

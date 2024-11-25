@@ -152,7 +152,7 @@
             <asp:Repeater ID="RepeaterProducts" runat="server">
                 <ItemTemplate>
                     <div class="product">
-                        <img src='<%# ResolveUrl("img/" + Eval("image")) %>' alt="Product Image" />
+                        <img src='<%# ResolveUrl("" + Eval("image")) %>' alt="Product Image" />
                         <div class="product-details">
                             <h3><asp:Label ID="ProductNameLabel" runat="server" Text='<%# Eval("product_name") %>' /></h3>
                             <p>Price: $<asp:Label ID="ProductPriceLabel" runat="server" Text='<%# Eval("price") %>' /></p>
