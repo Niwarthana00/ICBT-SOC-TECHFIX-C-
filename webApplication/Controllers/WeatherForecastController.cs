@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using webApplication.service;
 
 namespace webApplication.Controllers
 {
@@ -6,28 +7,49 @@ namespace webApplication.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly WeatherForecastService _service;
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(WeatherForecastService service)
         {
-            _logger = logger;
+            _service = service;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var forecasts =  _service.GetAllForecastsAsync();
+            return Ok(forecasts);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var forecast = await _service.GetForecastByIdAsync(id);
+            if (forecast == null) return NotFound();
+            return Ok(forecast);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(WeatherForecast forecast)
+        {
+            await _service.AddForecastAsync(forecast);
+            return CreatedAtAction(nameof(GetById), new { id = forecast.Id }, forecast);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, WeatherForecast forecast)
+        {
+            if (id != forecast.Id) return BadRequest();
+            await _service.UpdateForecastAsync(forecast);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _service.DeleteForecastAsync(id);
+            return NoContent();
+        }
+
     }
 }

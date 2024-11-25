@@ -45,8 +45,12 @@ namespace techfix.supplier2
                 // Convert the CommandArgument to an integer to retrieve the category ID
                 int categoryId = Convert.ToInt32(e.CommandArgument);
 
+                Console.WriteLine("Category ID: " + categoryId);
+
+
                 // Redirect to editcategory.aspx with the category ID as a query parameter
                 Response.Redirect("editcategory.aspx?id=" + categoryId);
+
             }
             else if (e.CommandName == "Delete")
             {

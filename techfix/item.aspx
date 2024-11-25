@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Items</title>
-     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
     <link href="css/repair.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -82,7 +82,7 @@
                         <ItemTemplate>
                             <div class="col-lg-3 col-md-4 col-sm-6 mb-5">
                                 <div class="item">
-                                    <img src='<%# "img/" + Eval("image_name") %>' alt='<%# Eval("item_name") %>' />
+                                    <img src='<%#  Eval("image_name") %>' alt='<%# Eval("item_name") %>' />
                                     <h4 class="text-white"><%# Eval("item_name") %></h4>
                                     <p class="text-white margin"><%# Eval("description") %></p>
                                     <div class="price">Price: RS.<%# Eval("price", "{0:0.00}") %></div>
@@ -104,12 +104,7 @@
         <div class="modal-content" style="height: 499px;">
            
             <div class="modal-body custom-modal-body" style="    background: #242424;" >
-            <button 
-                type="button" 
-                class="btn-close" 
-                data-bs-dismiss="modal" 
-                aria-label="Close" 
-                style="background-color: transparent; position: absolute; top: 10px; right: 10px; filter: invert(1);">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: transparent; position: absolute; top: 10px; right: 10px; filter: invert(1);">
             </button>
                 <div class="custom-item-image">
                     <img id="itemImage" src="" alt="Item Image" style= "margin-top: 78px;">
@@ -210,8 +205,6 @@
             };
             xhr.send();
         }
-
-
     </script>
 </body>
 </html>

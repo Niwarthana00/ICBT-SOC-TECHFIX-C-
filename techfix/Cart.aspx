@@ -66,7 +66,7 @@
             <ItemTemplate>
                 <div class="row cart-item align-items-center">
                     <div class="col-3 col-md-2">
-                        <img src='<%# Eval("Image") %>' alt='<%# Eval("ItemName") %>' class="img-fluid rounded" />
+                        <img src='' alt='<%# Eval("ItemName") %>' class="img-fluid rounded" />
                     </div>
                     <div class="col-4 col-md-3">
                         <h5 class="mb-0"><%# Eval("ItemName") %></h5>
@@ -95,6 +95,11 @@
                 Grand Total: 
                 RS.<asp:Label ID="grandTotalLabel" runat="server" Text="0.00"></asp:Label>
             </h3>
+
+           <div>
+            <asp:Button ID="Button1" runat="server" Text="Back" CssClass="btn btn-primary" OnClick="back_Click" />
+         </div>
+
             <div>
                 <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="btn btn-primary" OnClick="Checkout_Click" />
                 <asp:Button ID="btnDownloadQuotation" runat="server" Text="Download the Quotation" CssClass="btn download-btn" OnClick="DownloadQuotation_Click" />

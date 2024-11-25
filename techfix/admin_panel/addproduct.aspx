@@ -35,7 +35,7 @@
                                         <asp:BoundField DataField="price" HeaderText="Price" />
                                         <asp:TemplateField HeaderText="Image">
                                             <ItemTemplate>
-                                                <img src='<%# "../img/" + Eval("image_name") %>' alt='<%# Eval("item_name") %>' style="width:100px;height:auto;" />
+                                                <img src='<%# "" + Eval("image_name") %>' alt='<%# Eval("item_name") %>' style="width:100px;height:auto;" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Actions">

@@ -42,8 +42,9 @@
                 </div>
              <div class="col-md-9">
                     <!-- Repair section content can go here -->
-                    <h2 class="text-white">Repair Services</h2>
+                    <h2 class="text-white">Build your Dream PC </h2>
                     <p class="text-white">Details about repair services...</p>
+                    <img src='https://mapmodnews.com/wp-content/uploads/2021/11/6e8bae1b4eed830cc755df65ac75312ce81e4554-e1637905616462.jpeg'>
                 </div>
             </div>
         </div>

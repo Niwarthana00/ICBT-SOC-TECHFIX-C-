@@ -30,7 +30,7 @@ namespace techfix.supplier1
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT category_name FROM category WHERE id = @id", conn);
+                SqlCommand cmd = new SqlCommand("SELECT category_name FROM s2category WHERE id = @id", conn);
                 cmd.Parameters.AddWithValue("@id", categoryId);
 
                 conn.Open();

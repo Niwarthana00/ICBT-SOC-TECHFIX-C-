@@ -35,21 +35,42 @@ namespace techfix.admin_panel
             }
         }
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            if (e.CommandName == "Edit")
-            {
-                int categoryId = Convert.ToInt32(e.CommandArgument);
-                Response.Redirect("editcategory.aspx?id=" + categoryId);
-            }
-            else if (e.CommandName == "Delete")
-            {
-                int categoryId = Convert.ToInt32(e.CommandArgument);
-                DeleteCategory(categoryId);
-                BindCategoryGrid();
-            }
+            // Get the category ID from the selected row
+            int categoryId = Convert.ToInt32(GridView1.DataKeys[e.NewEditIndex].Value);
+
+            // Redirect to the edit page with the category ID
+            Response.Redirect("editcategory.aspx?id=" + categoryId);
         }
 
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            try
+            {
+                // Make sure the DataKeys collection is not empty and contains the expected key
+                if (GridView1.DataKeys.Count > 0 && e.RowIndex >= 0)
+                {
+                    // Retrieve the category ID from the DataKeys collection
+                    int categoryId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value);
+
+                    // Proceed with the delete operation
+                    DeleteCategory(categoryId);
+                    // Rebind the GridView after deletion
+                    BindCategoryGrid();
+                }
+                else
+                {
+                    // Handle the case where DataKeys is not populated or the row index is invalid
+                    throw new InvalidOperationException("Invalid row index or DataKeys collection is empty.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log or display the exception as needed
+                ClientScript.RegisterStartupScript(this.GetType(), "Alert", $"alert('Error: {ex.Message}');", true);
+            }
+        }
 
         private void DeleteCategory(int categoryId)
         {
@@ -61,14 +82,12 @@ namespace techfix.admin_panel
                 cmd.Parameters.AddWithValue("@id", categoryId);
 
                 conn.Open();
-
+                cmd.ExecuteNonQuery();
                 conn.Close();
             }
 
             // Display the success modal after deletion
             ClientScript.RegisterStartupScript(this.GetType(), "ShowSuccessModal", "showSuccessModal();", true);
         }
-
     }
 }
-

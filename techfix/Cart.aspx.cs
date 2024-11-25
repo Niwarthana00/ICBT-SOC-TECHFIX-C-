@@ -108,6 +108,12 @@ namespace techfix
             Response.Redirect("Checkout.aspx");
         }
 
+        protected void back_Click(object sender, EventArgs e)
+        {
+            // Redirect to the previous page (or any other page, e.g., home.aspx)
+            Response.Redirect("home.aspx");
+        }
+
         protected void DownloadQuotation_Click(object sender, EventArgs e)
         {
             List<CartItem> cartItems = Session["Cart"] as List<CartItem>;
