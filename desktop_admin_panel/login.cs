@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace desktop_admin_panel
 {
     public partial class login : Form
     {
-        // Replace with your actual connection string
-         string connectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=techfixdb;Integrated Security=True";
-
         public login()
         {
             InitializeComponent();
@@ -19,39 +15,36 @@ namespace desktop_admin_panel
             string email = textBox1.Text.Trim();
             string password = textBox2.Text.Trim();
 
-            // Query to check user credentials
-            string query = "SELECT COUNT(1) FROM UserRole WHERE Email = @Email AND Password = @Password AND Role = 'Admin'";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            // Validate email field
+            if (string.IsNullOrWhiteSpace(email) || email == "Enter your email...")
             {
-                try
-                {
-                    conn.Open();
+                MessageBox.Show("Please enter your email.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox1.Focus();
+                return;
+            }
 
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        cmd.Parameters.AddWithValue("@Password", password);
+            // Validate password field
+            if (string.IsNullOrWhiteSpace(password) || password == "Enter your password...")
+            {
+                MessageBox.Show("Please enter your password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox2.Focus();
+                return;
+            }
 
-                        int userCount = (int)cmd.ExecuteScalar();
+            // Validate credentials (replace "bba" and "umma" with your actual credentials)
+            if (email == "admin@example.com" && password == "admin123")
+            {
 
-                        if (userCount == 1)
-                        {
-                            MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            dashboard dashboardForm = new dashboard();
-                            dashboardForm.Show(); // Show the dashboard form
-                            this.Hide(); // Hide the login form
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid email or password, or you are not authorized to access this system.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
+
+                dashboard dashboardForm = new dashboard(); // Assuming `dashboard` is another form in your project
+                dashboardForm.Show();                                            // Hide the current login form
+
+              
+            }
+            else
+            {
+                MessageBox.Show("Invalid email or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -68,7 +61,6 @@ namespace desktop_admin_panel
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                textBox1.Text = "Enter your email...";
                 textBox1.ForeColor = System.Drawing.Color.Gray;
             }
         }
@@ -87,7 +79,6 @@ namespace desktop_admin_panel
         {
             if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                textBox2.Text = "Enter your password...";
                 textBox2.ForeColor = System.Drawing.Color.Gray;
                 textBox2.UseSystemPasswordChar = false;
             }
@@ -95,13 +86,21 @@ namespace desktop_admin_panel
 
         private void login_Load(object sender, EventArgs e)
         {
-            // Set placeholders on load
-            textBox1.Text = "Enter your email...";
             textBox1.ForeColor = System.Drawing.Color.Gray;
 
-            textBox2.Text = "Enter your password...";
             textBox2.ForeColor = System.Drawing.Color.Gray;
             textBox2.UseSystemPasswordChar = false;
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); // Close the application
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

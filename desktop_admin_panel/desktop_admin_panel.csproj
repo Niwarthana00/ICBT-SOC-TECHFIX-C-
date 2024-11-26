@@ -70,6 +70,12 @@
     <Compile Include="category_page.Designer.cs">
       <DependentUpon>category_page.cs</DependentUpon>
     </Compile>
+    <Compile Include="contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="contact.Designer.cs">
+      <DependentUpon>contact.cs</DependentUpon>
+    </Compile>
     <Compile Include="customer_details.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +118,6 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="order_place.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="order_place.Designer.cs">
-      <DependentUpon>order_place.cs</DependentUpon>
-    </Compile>
     <Compile Include="product_page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +150,9 @@
     <EmbeddedResource Include="category_page.resx">
       <DependentUpon>category_page.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="contact.resx">
+      <DependentUpon>contact.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="customer_details.resx">
       <DependentUpon>customer_details.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="order_place.resx">
-      <DependentUpon>order_place.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="product_page.resx">
       <DependentUpon>product_page.cs</DependentUpon>

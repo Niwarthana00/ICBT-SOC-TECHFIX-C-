@@ -43,7 +43,6 @@ namespace desktop_admin_panel
             customer_page customerForm = new customer_page();
             customerForm.Show();
 
-            // Then close current form
             this.Hide();
         }
 
@@ -57,8 +56,8 @@ namespace desktop_admin_panel
         private void button2_Click(object sender, EventArgs e)
         {
 
-            order_place order = new order_place();
-            order.Show();
+            contact contact = new contact();
+            contact.Show();
 
             this.Hide();
         }
@@ -111,6 +110,19 @@ namespace desktop_admin_panel
                 loginform.Show();
                 this.Hide();
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            contact customerForm = new contact();
+            customerForm.Show();
+
+            this.Hide();
         }
     }
 }

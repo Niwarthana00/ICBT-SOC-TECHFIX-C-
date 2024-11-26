@@ -65,8 +65,6 @@ namespace desktop_admin_panel
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(370, 41);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
             // 
@@ -77,9 +75,6 @@ namespace desktop_admin_panel
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(370, 41);
             this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // button1
             // 
@@ -96,7 +91,7 @@ namespace desktop_admin_panel
             this.button1.TabIndex = 4;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // label2
             // 
@@ -129,7 +124,6 @@ namespace desktop_admin_panel
             this.pictureBox1.Size = new System.Drawing.Size(553, 375);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label4
             // 
@@ -142,7 +136,6 @@ namespace desktop_admin_panel
             this.label4.Size = new System.Drawing.Size(125, 25);
             this.label4.TabIndex = 8;
             this.label4.Text = " Enter email :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
