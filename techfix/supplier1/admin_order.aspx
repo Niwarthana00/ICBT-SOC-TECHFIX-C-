@@ -99,7 +99,7 @@
             <div class="row g-4">
                 <div class="col-12">
                     <div class="bg-secondary rounded h-100 p-4">
-                        <h6 class="mb-4">Customer Orders</h6>
+                        <h6 class="mb-4">Admin Orders</h6>
                         <!-- Month Filter Section -->
                         <div class="form-group">
                             <label for="monthSelect">Select Month:</label>

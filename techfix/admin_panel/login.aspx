@@ -45,7 +45,7 @@
                             <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Password"></asp:TextBox>
                         </div>
 
-                        <p class="text-center mb-0" style="margin-right: -309px;"> Already have an Account? <a href="singup.aspx"> Sing up</a></p> <br />
+                        
                         <asp:Label ID="lblMessage" runat="server" CssClass="text-danger d-block text-center" Visible="false"></asp:Label>
                         <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary w-100" Text="Login" OnClick="btnLogin_Click" />
                     </div>
